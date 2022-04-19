@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_24"
+        android:title="Inicio"/>
+
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/add_24"
+        android:title="Donación"/>
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search_24"
+        android:title="Buscar"/>
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/user_24"
+        android:title="Perfil"/>
+
+    <item
+        android:id="@+id/menu"
+        android:icon="@drawable/apps_24"
+        android:title="Menú"/>
+
+
+</menu>

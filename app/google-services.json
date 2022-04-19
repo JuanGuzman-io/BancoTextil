@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166286448525",
+    "firebase_url": "https://proyecto-bancotextil-default-rtdb.firebaseio.com",
+    "project_id": "proyecto-bancotextil",
+    "storage_bucket": "proyecto-bancotextil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166286448525:android:c3de566d0a36114fee0fc4",
+        "android_client_info": {
+          "package_name": "com.example.bancotextil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166286448525-tu2e1on20qet9pp3jfb3uee1f2lchm64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ0OJ0CihncYuVTwc7-u-Bkuk9xRpgFNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166286448525-tu2e1on20qet9pp3jfb3uee1f2lchm64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

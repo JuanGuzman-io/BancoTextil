@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Banco Textil</string>
+
+    <string name="Type">Tipo de tela</string>
+    <string-array name="type_array">
+        <item>Bramante</item>
+        <item>Ecológica</item>
+        <item>Indiolino</item>
+        <item>Loneta</item>
+        <item>Manta</item>
+        <item>Yute</item>
+        <item>Atlixco</item>
+        <item>Antifluidos</item>
+        <item>Halloween</item>
+        <item>Para Bandera</item>
+        <item>Para Uniformes Escolares</item>
+        <item>Polares</item>
+        <item>Satín</item>
+        <item>Tafeta Forro</item>
+        <item>Tafetán</item>
+        <item>Bramante</item>
+        <item>Navideñas</item>
+        <item>Para Carnaval</item>
+        <item>Para Cubrebocas</item>
+        <item>Para Sábanas</item>
+        <item>Quirúrgica</item>
+        <item>Popelina</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string name="Welcome_Text">Estamos felices de tenerte acá. Por favor ingresa con tu cuenta para iniciar sesión.</string>
+    <string name="Create_Text">Crear tu cuenta te tomara menos de un minuto. Empieza ingresando tu correo electrónico y contraseña.</string>
+    <string name="Reset_Text">Para restablecer tu contraseña por favor ingresa el correo electrónico mediante el cual inicias sesión.</string>
+    <string name="Register_Text">Para finalizar el registro ingresa tu nombre completo.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
