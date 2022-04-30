@@ -3,6 +3,7 @@ package com.example.bancotextil;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ public class Home extends AppCompatActivity {
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
             bottomNavigationView.setSelectedItemId(R.id.home);
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
