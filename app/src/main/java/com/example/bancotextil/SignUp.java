@@ -26,7 +26,7 @@ public class SignUp extends AppCompatActivity {
     private TextInputLayout etEmailBase, etPassBase, etConfirmBase;
     private TextInputEditText etEmail, etPass, etConfirm;
     private MaterialButton btnRegister;
-
+    //Change
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
