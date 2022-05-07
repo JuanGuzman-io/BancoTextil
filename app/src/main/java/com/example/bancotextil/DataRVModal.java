@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class DataRVModal implements Parcelable {
     private String pubid, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre;
-    private LocalDateTime fecha;
+    // private LocalDateTime fecha;
 
     public DataRVModal(){
     }
@@ -22,7 +22,7 @@ public class DataRVModal implements Parcelable {
         this.direccion = direccion;
         this.desc = desc;
         this.nombre = nombre;
-        this.fecha = fecha;
+        // this.fecha = fecha;
     }
 
     protected DataRVModal(Parcel in) {
@@ -121,13 +121,13 @@ public class DataRVModal implements Parcelable {
         this.nombre = nombre;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
+    //public LocalDateTime getFecha() {
+     //   return fecha;
+    //}
 
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
+    //public void setFecha(LocalDateTime fecha) {
+      //  this.fecha = fecha;
+    //}
 
     @Override
     public int describeContents() {
