@@ -35,6 +35,20 @@ public class EditPost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_post);
 
+        selectBase = findViewById(R.id.selectBase2);
+        select = findViewById(R.id.select2);
+
+        etTituloBase = findViewById(R.id.etTituloBase2);
+        etTitulo = findViewById(R.id.etTitulo2);
+        etNumeroBase = findViewById(R.id.etNumeroBase2);
+        etNumero = findViewById(R.id.etNumero2);
+        etCantidadBase = findViewById(R.id.etCantidadBase2);
+        etCantidad = findViewById(R.id.etCantidad2);
+        etDireccionBase = findViewById(R.id.etDireccionBase2);
+        etDireccion = findViewById(R.id.etDireccion2);
+        etDescBase = findViewById(R.id.etDescBase2);
+        etDesc = findViewById(R.id.etDesc2);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")

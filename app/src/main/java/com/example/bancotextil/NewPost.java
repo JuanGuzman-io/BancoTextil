@@ -3,6 +3,7 @@ package com.example.bancotextil;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,7 +32,6 @@ public class NewPost extends AppCompatActivity {
     private AutoCompleteTextView select;
     private TextInputLayout etTituloBase, etNumeroBase, etCantidadBase, etDireccionBase, etDescBase, selectBase;
     private TextInputEditText etTitulo, etNumero, etCantidad, etDireccion, etDesc;
-    private MaterialButton btnPost;
 
     ArrayAdapter<String> typeAdapter;
 
@@ -42,21 +42,21 @@ public class NewPost extends AppCompatActivity {
 
         PostData = FirebaseDatabase.getInstance().getReference();
 
-        selectBase = findViewById(R.id.selectBase2);
-        select = findViewById(R.id.select2);
+        selectBase = findViewById(R.id.selectBase);
+        select = findViewById(R.id.select);
 
-        etTituloBase = findViewById(R.id.etTituloBase2);
-        etTitulo = findViewById(R.id.etTitulo2);
-        etNumeroBase = findViewById(R.id.etNumeroBase2);
-        etNumero = findViewById(R.id.etNumero2);
-        etCantidadBase = findViewById(R.id.etCantidadBase2);
-        etCantidad = findViewById(R.id.etCantidad2);
-        etDireccionBase = findViewById(R.id.etDireccionBase2);
-        etDireccion = findViewById(R.id.etDireccion2);
-        etDescBase = findViewById(R.id.etDescBase2);
-        etDesc = findViewById(R.id.etDesc2);
+        etTituloBase = findViewById(R.id.etTituloBase);
+        etTitulo = findViewById(R.id.etTitulo);
+        etNumeroBase = findViewById(R.id.etNumeroBase);
+        etNumero = findViewById(R.id.etNumero);
+        etCantidadBase = findViewById(R.id.etCantidadBase);
+        etCantidad = findViewById(R.id.etCantidad);
+        etDireccionBase = findViewById(R.id.etDireccionBase);
+        etDireccion = findViewById(R.id.etDireccion);
+        etDescBase = findViewById(R.id.etDescBase);
+        etDesc = findViewById(R.id.etDesc);
 
-        btnPost = findViewById(R.id.btnDeletePost);
+        MaterialButton btnPost = findViewById(R.id.btnPost);
 
         String[] types = getResources().getStringArray(R.array.type_array);
 
@@ -75,6 +75,7 @@ public class NewPost extends AppCompatActivity {
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
             bottomNavigationView.setSelectedItemId(R.id.add);
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
