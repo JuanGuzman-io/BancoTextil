@@ -40,7 +40,7 @@ public class SignUp extends AppCompatActivity {
         etPass = findViewById(R.id.etPass2);
         etConfirm = findViewById(R.id.etConfirmPass);
         btnRegister = findViewById(R.id.btnReset);
-
+        //esto es un comentario
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
