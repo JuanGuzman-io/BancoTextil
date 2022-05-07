@@ -37,7 +37,6 @@ public class EditPost extends AppCompatActivity {
 
         selectBase = findViewById(R.id.selectBase2);
         select = findViewById(R.id.select2);
-
         etTituloBase = findViewById(R.id.etTituloBase2);
         etTitulo = findViewById(R.id.etTitulo2);
         etNumeroBase = findViewById(R.id.etNumeroBase2);
