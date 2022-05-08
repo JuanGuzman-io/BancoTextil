@@ -38,9 +38,9 @@ public class DataRVAdapter extends RecyclerView.Adapter<DataRVAdapter.ViewHolder
         DataRVModal dataRVModal = dataRVModalArrayList.get(position);
         holder.nameTV.setText(dataRVModal.getNombre());
         holder.titleTV.setText(dataRVModal.getTitulo());
-        //holder.dateTV.setText(dataRVModal.getFecha().toString());
+        //holder.dateTV.setText(dataRVModal.getFecha().toLocalDate().toString());
         holder.tipoTV.setText(dataRVModal.getTipo());
-        holder.cantidadTV.setText(dataRVModal.getCantidad());
+        holder.cantidadTV.setText(dataRVModal.getCantidad() + " kg");
         setAnimation(holder.itemView, position);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +65,13 @@ public class DataRVAdapter extends RecyclerView.Adapter<DataRVAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameTV,  titleTV, tipoTV, cantidadTV;
+        private TextView nameTV, dateTV, titleTV, tipoTV, cantidadTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTV = itemView.findViewById(R.id.nameIV);
             titleTV = itemView.findViewById(R.id.titleIV);
-            //dateTV = itemView.findViewById(R.id.dateIV);
+           // dateTV = itemView.findViewById(R.id.dateIV);
             tipoTV = itemView.findViewById(R.id.tipoIV);
             cantidadTV = itemView.findViewById(R.id.cantidadIV);
         }

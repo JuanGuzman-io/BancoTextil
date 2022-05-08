@@ -96,41 +96,37 @@ public class Home extends AppCompatActivity implements  DataRVAdapter.DataClickI
     }
 
     private void getAllPosts() {
-        progressDialog = new ProgressDialog(this);
-        progressDialog.show();
-        progressDialog.setContentView(R.layout.progress_dialog);
-        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         dataRVModalsArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 dataRVModalsArrayList.add(snapshot.getValue(DataRVModal.class));
                 dataRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, String previousChildName) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 dataRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 dataRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, String previousChildName) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 dataRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                progressDialog.dismiss();
+                //progressDialog.dismiss();
                 dataRVAdapter.notifyDataSetChanged();
             }
         });
@@ -138,6 +134,6 @@ public class Home extends AppCompatActivity implements  DataRVAdapter.DataClickI
 
     @Override
     public void onDataClick(int position) {
-
+        startActivity(new Intent(this, PostInfo.class));
     }
 }
