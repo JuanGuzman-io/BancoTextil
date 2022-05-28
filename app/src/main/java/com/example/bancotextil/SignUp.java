@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +27,8 @@ public class SignUp extends AppCompatActivity {
     private TextInputLayout etEmailBase, etPassBase, etConfirmBase;
     private TextInputEditText etEmail, etPass, etConfirm;
     private MaterialButton btnRegister;
-    //Change
+    private CheckBox cbTerminos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +42,19 @@ public class SignUp extends AppCompatActivity {
         etPass = findViewById(R.id.etPass2);
         etConfirm = findViewById(R.id.etConfirmPass);
         btnRegister = findViewById(R.id.btnReset);
-        //esto es un comentario
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Register();
-            }
-        });
+        cbTerminos = findViewById(R.id.cbTerminos);
+
+        if (cbTerminos.isChecked()) {
+            btnRegister.setEnabled(false);
+        } else {
+            btnRegister.setEnabled(true);
+            btnRegister.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Register();
+                }
+            });
+        }
     }
 
     private void Register() {

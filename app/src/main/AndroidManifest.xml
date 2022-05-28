@@ -18,9 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoTextil">
         <activity
-            android:name=".PostInfo"
-            android:exported="false" />
-        <activity
             android:name=".EditPost"
             android:exported="false" />
         <activity

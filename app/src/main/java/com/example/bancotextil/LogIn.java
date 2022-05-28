@@ -39,7 +39,7 @@ public class LogIn extends AppCompatActivity {
         etPass = findViewById(R.id.etPass);
     }
 
-    public void LogIn(View v) {
+    public void Login(View v) {
         progressDialog = new ProgressDialog(this);
         progressDialog.show();
         progressDialog.setContentView(R.layout.progress_dialog);
