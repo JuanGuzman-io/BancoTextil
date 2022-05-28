@@ -12,6 +12,7 @@
     app:cardElevation="3dp">
 
     <RelativeLayout
+        android:id="@+id/dataView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp">
@@ -40,6 +41,16 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="0dp"
             android:text="Hace 1 hora" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateIV"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="22dp"
+            android:text="state"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/tipo"

@@ -95,15 +95,17 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etCantidadBase"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="20dp"
         android:hint="Cantidad"
         app:errorEnabled="true"
         app:helperTextEnabled="false"
         app:helperTextTextColor="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectBase"
         app:layout_constraintTop_toBottomOf="@+id/etTituloBase"
         app:suffixText="Kg">
 

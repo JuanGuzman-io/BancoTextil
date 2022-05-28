@@ -32,6 +32,7 @@
     <string name="Create_Text">Crear tu cuenta te tomara menos de un minuto. Empieza ingresando tu correo electrónico y contraseña.</string>
     <string name="Reset_Text">Para restablecer tu contraseña por favor ingresa el correo electrónico mediante el cual inicias sesión.</string>
     <string name="Register_Text">Para finalizar el registro ingresa tu nombre completo.</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoianVhbml0bzEyMyIsImEiOiJjbDNud2tndDIwZzIyM2RyeG93bXU5b3lrIn0.xowpkLX3eCouVe2VD0MzKQ</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,19 +1,23 @@
 package com.example.bancotextil;
 
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.annotation.RequiresApi;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class DataRVModal implements Parcelable {
     private String pubid, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre;
+    private Boolean estado;
     //private LocalDateTime fecha;
 
     public DataRVModal() {
     }
 
-    public DataRVModal(String pubid, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha) {
+    public DataRVModal(String pubid, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha, Boolean estado) {
         this.pubid = pubid;
         this.userId = userId;
         this.titulo = titulo;
@@ -23,6 +27,7 @@ public class DataRVModal implements Parcelable {
         this.direccion = direccion;
         this.desc = desc;
         this.nombre = nombre;
+        this.estado = estado;
         //this.fecha = fecha;
     }
 
@@ -36,6 +41,7 @@ public class DataRVModal implements Parcelable {
         direccion = in.readString();
         desc = in.readString();
         nombre = in.readString();
+        estado = in.readBoolean();
     }
 
     public static final Creator<DataRVModal> CREATOR = new Creator<DataRVModal>() {
@@ -122,11 +128,20 @@ public class DataRVModal implements Parcelable {
         this.nombre = nombre;
     }
 
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
     @Override
     public int describeContents() {
         return 0;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(pubid);
@@ -138,5 +153,6 @@ public class DataRVModal implements Parcelable {
         parcel.writeString(direccion);
         parcel.writeString(desc);
         parcel.writeString(nombre);
+        parcel.writeBoolean(estado);
     }
 }

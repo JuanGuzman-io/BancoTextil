@@ -128,6 +128,7 @@ public class NewPost extends AppCompatActivity {
         String userId = user.getUid();
         String nombre = user.getDisplayName();
         LocalDateTime fecha = LocalDateTime.now();
+        Boolean estado = true;
 
         if (TextUtils.isEmpty(titulo) || TextUtils.isEmpty(tipo) || TextUtils.isEmpty(numero) || TextUtils.isEmpty(cantidad) || TextUtils.isEmpty(direccion) || TextUtils.isEmpty(desc)) {
             progressDialog.dismiss();
@@ -143,7 +144,7 @@ public class NewPost extends AppCompatActivity {
         } else {
             progressDialog.dismiss();
             String id = PostData.push().getKey();
-            PostData donacion = new PostData(id, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre, fecha);
+            PostData donacion = new PostData(id, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre, fecha, estado);
             PostData.child("Posts").child(id).setValue(donacion);
             Toast.makeText(this, "Se ha publicado tu donación \uD83D\uDC4F", Toast.LENGTH_SHORT).show();
             etTitulo.setText("");

@@ -1,16 +1,19 @@
 package com.example.bancotextil;
 
+import android.text.BoringLayout;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class PostData {
     String pubId, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre;
     LocalDateTime fecha;
+    Boolean estado;
 
     public PostData() {
     }
 
-    public PostData(String pubId, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha) {
+    public PostData(String pubId, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha, Boolean estado) {
         this.pubId = pubId;
         this.userId = userId;
         this.titulo = titulo;
@@ -21,6 +24,7 @@ public class PostData {
         this.desc = desc;
         this.nombre = nombre;
         this.fecha = fecha;
+        this.estado = estado;
     }
 
     public String getPubId() {
@@ -95,9 +99,19 @@ public class PostData {
         this.nombre = nombre;
     }
 
-    public LocalDateTime getFecha() { return fecha; }
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
 
     public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
     }
 }

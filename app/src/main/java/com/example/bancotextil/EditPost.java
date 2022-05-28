@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,12 +35,11 @@ import java.util.Map;
 public class EditPost extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private DatabaseReference databaseReference;
-    private DataRVModal dataRVModal;
     ProgressDialog progressDialog;
     private AutoCompleteTextView select;
     private TextInputLayout etTituloBase, etNumeroBase, etCantidadBase, etDireccionBase, etDescBase, selectBase;
     private TextInputEditText etTitulo, etNumero, etCantidad, etDireccion, etDesc;
-    private MaterialButton btnUpdatePost, btnDeletePost;
+    private SwitchMaterial switchEstado;
     private String pubId;
 
     ArrayAdapter<String> typeAdapter;
@@ -62,10 +62,10 @@ public class EditPost extends AppCompatActivity {
         etDescBase = findViewById(R.id.etDescBase2);
         etDesc = findViewById(R.id.etDesc2);
 
-        btnUpdatePost = findViewById(R.id.btnUpdatePost);
-        btnDeletePost = findViewById(R.id.btnDeletePost);
+        MaterialButton btnUpdatePost = findViewById(R.id.btnUpdatePost);
+        MaterialButton btnDeletePost = findViewById(R.id.btnDeletePost);
 
-        dataRVModal = getIntent().getParcelableExtra("data");
+        DataRVModal dataRVModal = getIntent().getExtras().getParcelable("post");
 
         if (dataRVModal != null) {
             select.setText(dataRVModal.getTipo());
@@ -179,13 +179,6 @@ public class EditPost extends AppCompatActivity {
                     Toast.makeText(EditPost.this, "Ocurrio un error", Toast.LENGTH_SHORT).show();
                 }
             });
-
-            etTituloBase.setHelperText("");
-            selectBase.setHelperText("");
-            etNumeroBase.setHelperText("");
-            etCantidadBase.setHelperText("");
-            etDireccionBase.setHelperText("");
-            etDescBase.setHelperText("");
         }
     }
 

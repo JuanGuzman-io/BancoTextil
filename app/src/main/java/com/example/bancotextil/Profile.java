@@ -26,6 +26,7 @@ public class Profile extends AppCompatActivity {
         tvNombre1 = findViewById(R.id.tvNombre1);
         tvNombre2 = findViewById(R.id.tvNombre2);
 
+
         if (user != null) {
             tvNombre1.setText(user.getDisplayName());
             tvNombre2.setText(user.getDisplayName());
