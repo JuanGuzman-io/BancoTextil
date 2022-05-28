@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Profile extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private TextView tvNombre1, tvNombre2;
+    private TextView tvNombre1, tvNombre2, tvInitial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,21 @@ public class Profile extends AppCompatActivity {
 
         tvNombre1 = findViewById(R.id.tvNombre1);
         tvNombre2 = findViewById(R.id.tvNombre2);
+        tvInitial = findViewById(R.id.tvInitial);
+        Button btnPost = findViewById(R.id.btnDonacion);
+
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Profile.this, NewPost.class));
+            }
+        });
 
 
         if (user != null) {
             tvNombre1.setText(user.getDisplayName());
             tvNombre2.setText(user.getDisplayName());
+            tvInitial.setText(user.getDisplayName().substring(0));
 
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavView);
             bottomNavigationView.setSelectedItemId(R.id.profile);

@@ -27,6 +27,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
@@ -65,7 +66,7 @@ public class EditPost extends AppCompatActivity {
         MaterialButton btnUpdatePost = findViewById(R.id.btnUpdatePost);
         MaterialButton btnDeletePost = findViewById(R.id.btnDeletePost);
 
-        DataRVModal dataRVModal = getIntent().getExtras().getParcelable("post");
+        DataRVModal dataRVModal = getIntent().getParcelableExtra("post");
 
         if (dataRVModal != null) {
             select.setText(dataRVModal.getTipo());
@@ -76,8 +77,11 @@ public class EditPost extends AppCompatActivity {
             etDesc.setText(dataRVModal.getDesc());
             pubId = dataRVModal.getPubid();
         }
+        System.out.println(pubId);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Post").child(pubId);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Posts").child(pubId);
+
+        System.out.println("-------------------------------" + databaseReference);
 
         btnUpdatePost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +93,7 @@ public class EditPost extends AppCompatActivity {
         btnDeletePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DeletePost("Desea eliminar la publicación?");
+                DeletePost();
             }
         });
 
@@ -162,7 +166,7 @@ public class EditPost extends AppCompatActivity {
             progressDialog.dismiss();
             etDescBase.setHelperText("Máximo 100 caracteres");
         } else {
-            progressDialog.dismiss();
+
 
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -182,26 +186,10 @@ public class EditPost extends AppCompatActivity {
         }
     }
 
-    private void DeletePost(String cadena) {
-        progressDialog.dismiss();
-        AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-        alertbox.setMessage(cadena);
-        alertbox.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                progressDialog.dismiss();
-                databaseReference.removeValue();
-                Toast.makeText(EditPost.this, "Se ha eliminado la publicación", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(EditPost.this, Home.class));
-            }
-        });
+    private void DeletePost() {
+        databaseReference.removeValue();
+        Toast.makeText(EditPost.this, "Se ha eliminado la publicación", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(EditPost.this, Home.class));
 
-        alertbox.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                progressDialog.dismiss();
-                Toast.makeText(EditPost.this, "No se eliminó", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }

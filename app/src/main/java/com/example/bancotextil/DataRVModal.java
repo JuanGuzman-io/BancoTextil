@@ -10,15 +10,15 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class DataRVModal implements Parcelable {
-    private String pubid, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre;
+    private String pubId, userId, titulo, tipo, numero, cantidad, direccion, desc, nombre;
     private Boolean estado;
     //private LocalDateTime fecha;
 
     public DataRVModal() {
     }
 
-    public DataRVModal(String pubid, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha, Boolean estado) {
-        this.pubid = pubid;
+    public DataRVModal(String pubId, String userId, String titulo, String tipo, String numero, String cantidad, String direccion, String desc, String nombre, LocalDateTime fecha, Boolean estado) {
+        this.pubId = pubId;
         this.userId = userId;
         this.titulo = titulo;
         this.tipo = tipo;
@@ -32,7 +32,7 @@ public class DataRVModal implements Parcelable {
     }
 
     protected DataRVModal(Parcel in) {
-        pubid = in.readString();
+        pubId = in.readString();
         userId = in.readString();
         titulo = in.readString();
         tipo = in.readString();
@@ -57,11 +57,11 @@ public class DataRVModal implements Parcelable {
     };
 
     public String getPubid() {
-        return pubid;
+        return pubId;
     }
 
     public void setPubid(String pubid) {
-        this.pubid = pubid;
+        this.pubId = pubid;
     }
 
     public String getUserId() {
@@ -144,7 +144,7 @@ public class DataRVModal implements Parcelable {
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(pubid);
+        parcel.writeString(pubId);
         parcel.writeString(userId);
         parcel.writeString(titulo);
         parcel.writeString(tipo);

@@ -177,6 +177,7 @@ public class Home extends AppCompatActivity implements DataRVAdapter.DataClickIn
         bdNumero.setText("+57 " + dataRVModal.getNumero());
         bdDireccion.setText(dataRVModal.getDireccion());
         String pubId = dataRVModal.getPubid();
+        System.out.println("-----------------------------   "+pubId);
 
         if (!dataRVModal.getEstado()) {
             bdEstado.setText("Cerrado");
